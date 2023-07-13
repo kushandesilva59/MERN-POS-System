@@ -5,14 +5,7 @@ import logo from '../../images/Resident_Logo.png'
 
 
 export const Header = () => {
-  const loginOnAction = () =>{
-    
-  }
-
-
   return (
-
-   
     <div className='header'>
         <nav className='nav-list'>
             {/* <a href="" className='logo'>POS System</a> */}
@@ -22,7 +15,7 @@ export const Header = () => {
             <ul className='list'>
                 <li>Home</li>
                 <li>Items</li>
-                <button onClick={loginOnAction}>Login</button>
+                <button className='loginBtn'>Login</button>
             </ul>
         </nav>
     </div>

@@ -6,13 +6,13 @@
 
 
 .main{
-    width: 1130px;
-    max-width: 95%;
-    margin: 0 2%;
+    width: 100%;
+    max-width: 99%;
+    margin: 10px 10px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 80px;
+    gap: 60px;
 }
 
 .about img{
@@ -30,7 +30,7 @@
     display: flex;
     font-size: calc(2.9 * 1rem);
     text-transform: capitalize;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     width: 100%;
     justify-content: center;
 }
