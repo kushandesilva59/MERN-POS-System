@@ -2,7 +2,11 @@ const express = require('express')
 const mongoose = require('mongoose')
 
 const app = express();
-app.use(express.json())
+app.use(express.json());
+
+const customerRoute = require('./routes/CustomerRoute');
+
+app.use(customerRoute);
 
 
 

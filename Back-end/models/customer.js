@@ -17,4 +17,6 @@ const customerSchema = new mongoose.Schema({
         type: String,
         required : true
     }
-})
+});
+
+module.exports = mongoose.model('customer',customerSchema)
