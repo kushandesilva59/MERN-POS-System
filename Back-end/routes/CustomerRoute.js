@@ -1,23 +1,16 @@
 const express = require('express')
 const router = express.Router();
 
-const Customers = require('../models/customer')
+const Customer = require('../models/customer')
 
-//save customer
-router.post('/customer/save',(req,res)=>{
-    let newCustomer = new Customers(req.body);
-
-    newCustomer.save((err)=>{
-        if(err){
-            return res.status(400).json({
-                errror : err
-            });
-        }
-
-        return res.status(200).json({
-            success : "Customer successfully saved!.."
-        });
-    });
+router.post('/customer/save',async(req,res)=>{
+   try{
+    console.log("Request customer  :",req.body);
+    const newCustomer = await Customer.create(req.body);
+    res.send("Customer saved succesfully");
+   }catch(error){
+        return error;
+   }
 });
 
 module.exports = router;
