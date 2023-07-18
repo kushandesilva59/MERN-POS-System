@@ -1,0 +1,64 @@
+.footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+    gap: 1.5rem;
+}
+
+.footer-box h2{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.footer-box p{
+    font-size: 0.938rem;
+    margin-bottom: 10px;
+}
+
+.social{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+
+.social a{
+    font-size: 24px;
+    color: #1b1b1b;
+    padding: 10px;
+    background-color: #edeae3;
+    border-radius: 0.2rem;
+}
+
+.social a :hover{
+    color: #fff;
+    background-color: #bc9667;
+}
+
+.footer-box h3{
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.footer-box li a{
+    color: #1b1b1b;
+}
+
+.footer-box li a:hover{
+    color: #bc9667;
+}
+
+.contact{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+}
+
+.contact span{
+    display: flex;
+    align-items: center;
+}
+
+.contact .span{
+    font-size: 20px;
+    margin-right: 1rem;
+}
