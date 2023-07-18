@@ -1,18 +1,12 @@
 import './App.css';
-import {Header} from './components/header/Header'
-import {About} from './components/about/About'
-import {Footer} from './components/footer/Footer'
+import {About2} from './components/about/About2'
 import { Header2 } from './components/header/Header2';
 import {Home} from './components/home/Home'
 
 function App() {
   return (
     <div className="App">
-      <Header2/>
-      {/* <About/> 
-      <Footer/> */}
 
-      <Home/>
     </div>
   );
 }
