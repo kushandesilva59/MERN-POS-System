@@ -1,7 +1,6 @@
 .about{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
-    align-items: center;
     gap: 5rem;
 }
 
