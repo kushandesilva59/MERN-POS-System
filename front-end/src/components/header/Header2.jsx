@@ -3,10 +3,18 @@ import styles from '../header/header2.css'
 import logo from '../../images/logo.png'
 import {AiOutlineSearch} from 'react-icons/ai'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
+import js from '../header/header.js'
 
 
 export const Header2 = () => {
+
+
+
+
   return (
+
+    
+
     <div className='header'>
         <a href="" className='logo'>
             <img src={logo} alt="logo" />
@@ -29,7 +37,7 @@ export const Header2 = () => {
         </div>
 
         <div className="search-box">
-            <input type="search" name='' id='' placeholder='Search here'/>
+            <input type="search" name='search' id='search' placeholder='Search here'/>
         </div>
     </div>
   )

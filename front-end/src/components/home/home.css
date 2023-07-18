@@ -1,0 +1,36 @@
+.home{
+    width: 100%;
+    min-height: 100vh;
+    background: url(../../images/bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(17rem,auto));
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.home-text h1{
+    font-size: 3.4rem;
+    color: #bc9667;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.home-text p{
+    font-size: 0.938rem;
+    color: #fff;
+    margin: 0.5rem 0 1.4rem;
+}
+
+.btn{
+    padding: 10px 40px;
+    border-radius: 0.3rem;
+    background-color: #bc9667;
+    color: #fff;
+    font-weight: 500;
+}
+
+.btn:hover{
+    background-color: #8a6f4d;
+}
