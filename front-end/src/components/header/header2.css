@@ -1,0 +1,88 @@
+
+body{
+    color: #1b1b1b;
+}
+
+.header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 100px;
+    transition: 0.5s linear;
+    background-color: #1b1b1b;
+}
+
+.logo{
+    width: 60px;
+
+}
+
+.navbar{
+    display: flex;
+}
+
+.navbar a{
+    padding: 8px 17px;
+    color: #fff;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.navbar a:hover{
+    background-color: #bc9667;
+    border-radius: 0.2rem;
+    transition: 0.2s all linear;
+}
+
+.header-icon{
+    padding-left: 200px;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    column-gap: 1rem;
+}
+
+.header-icon .bx{
+    color: #fff;
+}
+.header-icon .bx:hover{
+    color: #bc9667;
+}
+
+#menu-icon{
+    color: #fff;
+    font-size: 24px;
+    z-index: 100001;
+    cursor: pointer;
+    display: none;
+}
+
+.search-box{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #fff;
+    width: 100%;
+}
+
+.search-box input{
+    padding: 20px;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    color: #bc9667;
+}
+
+.search-box input::placeholder{
+    font-size: 1rem;
+    font-weight: 500;
+}
