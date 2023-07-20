@@ -22,7 +22,15 @@ export const Products = () => {
                 {data.productData.map((product, index) => {
                     return (
                     
-                        <ProductCard img={product.img} title={product.title} desc={product.desc} price={product.price} key={index}/>
+                        <ProductCard 
+                            id = {product.id}
+                            img={product.img} 
+                            title={product.title} 
+                            desc={product.desc} 
+                            price={product.price} 
+                            product={product} 
+                            key={index}
+                        />
                     )
                 })}
 

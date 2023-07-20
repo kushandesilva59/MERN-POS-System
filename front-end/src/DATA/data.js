@@ -10,14 +10,14 @@ import pic6 from '../images/p6.png'
 const data = {
     productData : [
         {
-            itemCode : 1,
+            id : 1,
             img : pic1,
             title : 'Arabica Coffee pack',
             desc : '',
             price : 25
         },
         {
-            itemCode : 2,
+            id : 2,
             img : pic2,
             title : 'Boter O Pack',
             desc : '',
@@ -25,7 +25,7 @@ const data = {
         },
 
         {
-            itemCode : 3,
+            id : 3,
             img : pic3,
             title : 'Patch Roast pack',
             desc : '',
@@ -33,7 +33,7 @@ const data = {
         },
 
         {
-            itemCode : 4,
+            id : 4,
             img : pic4,
             title : 'Roll Coffee pack',
             desc : '',
@@ -41,7 +41,7 @@ const data = {
         },
 
         {
-            itemCode : 5,
+            id : 5,
             img : pic5,
             title : 'Sacred Grounds pack',
             desc : '',
@@ -49,7 +49,7 @@ const data = {
         },
 
         {
-            itemCode : 6,
+            id : 6,
             img : pic6,
             title : 'Presto Coffee pack',
             desc : '',

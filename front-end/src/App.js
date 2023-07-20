@@ -6,17 +6,16 @@ import {Home} from './components/home/Home'
 import {Products} from './components/products/Products'
 import {Footer2} from './components/footer/Footer2'
 import { Copyright } from './components/copyright/Copyright';
+import { CartProvider } from 'react-use-cart';
+import { Cart } from './components/cart/Cart';
 
 function App() {
   return (
     <div className="App">
-      <Header2/>
-      <Home/>
-      <About2/>
+    < CartProvider>
       <Products/>
-      <Customers/>
-      <Footer2/>  
-      <Copyright/>
+      <Cart/>
+     </CartProvider>
     </div>
   );
 }

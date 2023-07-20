@@ -55,7 +55,7 @@
     font-weight: 500;
 }
 
-.products-container .box .content a{
+.products-container .box .content button{
     padding: 0 1rem;
     color: #1b1b1b;
     border: 2px solid #bc9667;
@@ -63,7 +63,7 @@
     text-transform: uppercase;
 }
 
-.products-container .box .content a:hover{
+.products-container .box .content button:hover{
     background-color: #bc9667;
     color: #fff;
     transition: 0.2s all linear;
