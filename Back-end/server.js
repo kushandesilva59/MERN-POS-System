@@ -22,6 +22,8 @@ const DB_URI = 'mongodb://localhost:27017/MERN'
 const url = 'mongodb+srv://kushandesilva801:OQnffEmB4HLnASTM@cluster0.7neeooa.mongodb.net/?retryWrites=true&w=majority'
 
 
+
+
 const PORT = 8000;
 
 

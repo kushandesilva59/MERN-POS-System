@@ -21,14 +21,14 @@ export const Register = (props) => {
             <div className="auth-form-container">
                 <h2>Register</h2>
                 <form className="register-form" onSubmit={handleSubmit}>
-                    <label htmlFor="email">Full name</label>
+                    <label htmlFor="name">Full name</label>
                     <input value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="David johnson" id="name" name="name" />
 
-                    <label htmlFor="email">email</label>
+                    <label htmlFor="email">Email</label>
                     <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="youremail@gmail.com" id="email" name="email" />
 
 
-                    <label htmlFor="password">email</label>
+                    <label htmlFor="password">Password</label>
                     <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="password" id="password" name="password" />
 
                     <button type="submit">Log In</button>

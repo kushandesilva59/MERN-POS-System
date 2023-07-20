@@ -12,10 +12,16 @@ import { Cart } from './components/cart/Cart';
 function App() {
   return (
     <div className="App">
-    < CartProvider>
+    {/* < CartProvider>
       <Products/>
       <Cart/>
-     </CartProvider>
+     </CartProvider> */}
+
+     <Header2/>
+     <Home/>
+     <About2/>
+     <Customers/>
+     <Footer2/>
     </div>
   );
 }
