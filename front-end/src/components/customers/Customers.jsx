@@ -23,8 +23,9 @@ export const Customers = () => {
                         <i className='bx'><FaStarHalfAlt /></i>
                     </div>
 
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde aliquam neque officia quisquam iure voluptate ipsam placeat,
-                         dicta asperiores! Quae, excepturi id! Culpa, officiis consequatur. Vitae similique deserunt molestiae necessitatibus.</p>
+                    <p>Absolutely love this cafe! customer friendly service and a very uniquely designed cafe.
+                        It was a very chill vibe once you get it even though it is very close to the main road.Ideal fro working since its peaceful and quiet.
+                         I've added some snaps of the interior of the cafe, over all good customer satisfaction.</p>
                          <h2>Yasin Arafat</h2>
                          <img src={rev1} alt="picture" />
                 </div>
@@ -38,8 +39,8 @@ export const Customers = () => {
                         <i className='bx'><FaStarHalfAlt /></i>
                     </div>
 
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde aliquam neque officia quisquam iure voluptate ipsam placeat,
-                         dicta asperiores! Quae, excepturi id! Culpa, officiis consequatur. Vitae similique deserunt molestiae necessitatibus.</p>
+                    <p>One of my favourite coffe shop and it has nice ambience. Foods are really delicious and 
+                        staff is very friendly. Service is superb. Price rangle is also reasonable.</p>
                          <h2>Yasin Arafat</h2>
                   <img src={rev2} alt="picture" />
                 </div>

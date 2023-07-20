@@ -7,8 +7,7 @@ export const Home = () => {
     <section className='home' id='home'>
         <div className="home-text">
             <h1>Start your day <br /> with coffee</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores dolorem voluptatum, ipsum ex a error 
-                iure eaque unde optio dolorum consectetur dolore saepe ducimus. Assumenda tempora consequuntur molestias perspiciatis voluptatum!</p>
+            <p>Our Coffe SHop is a great place to relax and enjoy a Cup. See what's on the menu today! Silva's choice cafe, is a coffee shop in Colombo.</p>
             <a href="#" className='btn'>Shop Now</a>
         </div>
 

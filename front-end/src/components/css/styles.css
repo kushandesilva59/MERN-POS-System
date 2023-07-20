@@ -52,4 +52,60 @@
     color: white;
     text-decoration: underline;
   }
+
+  
+@media (max-width :1058px) {
+  .header{
+      padding: 16px 60px;
+  }
+
+  section{
+    padding: 50px 60px;
+  }
+
+  .home-text h1{
+      font-size: 2.4rem;
+  }
+  
+}  
+
+@media (max-width :991px) {
+  .header{
+      padding: 16px 4%;
+  }
+
+  section{
+    padding: 50px 4%;
+  }
+
+  .home-text h1{
+      font-size: 2rem;
+  }
+  
+}
+
+@media (max-width :768px){
+    .header{
+      padding: 12px 4%;
+    }
+
+    #menu-icon{
+      display: inline;
+    }
+
+    .navbar{
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      background-color: #edeae3;
+      row-gap: 1.4rem;
+      padding: 20px;
+      transition: 0.3s;
+      text-align: center;
+    }
+}
+  
   

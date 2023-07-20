@@ -8,15 +8,10 @@ import js from '../header/header.js'
 
 export const Header2 = () => {
 
-
-
-
   return (
 
-    
-
     <div className='header'>
-        <a href="" className='logo'>
+        <a href="#" className='logo'>
             <img src={logo} alt="logo" />
         </a>
 
