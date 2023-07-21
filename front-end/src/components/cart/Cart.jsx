@@ -1,6 +1,7 @@
 import React from 'react'
 import { useCart } from 'react-use-cart'
 import { Products } from '../products/Products';
+import styles from '../cart/cart.css'
 
 export const Cart = () => {
 
@@ -15,35 +16,51 @@ export const Cart = () => {
         emptyCart
     } = useCart();
 
-    if (isEmpty) return <h1>Your cart is empty</h1>
+    if (isEmpty) return <h1></h1>
 
     return (
-        <section>
+        <section className='cart'>
             <div>
-                <div>
-                    <h5>Cart {totalUniqueItems} total Items : {totalItems}</h5>
-                    <table>
+                <div className='top-cart'>
+                    {/* <h5>Cart {totalUniqueItems} total Items : {totalItems}</h5> */}
+                    <table >
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Title</th>
+                                <th>Unit Price</th>
+                                <th>Quantity</th>
+                                <th>- Quantity</th>
+                                <th>+ Quantity</th>
+                                <th>Remove Item</th>
+                            </tr>
+                        </thead>
+
                         <tbody>
                             {items.map((product, index) => {
                                 return (
                                     <tr key={index}>
                                         <td>
-                                            <img src={product.img} alt="" style={{ height: '6rem' }} />
+                                            <img src={product.img} alt="" style={{ height: '6rem',width:'auto'}} />
                                         </td>
                                         <td>{product.title}</td>
-                                        <td>{product.price}</td>
-                                        <td>Quantity ({product.quantity})</td>
+                                        <td>$ {product.price}</td>
+                                        <td> {product.quantity}</td>
 
                                         <td>
-                                            <button
+                                            <button className='minusBtn'
                                                 onClick={() => updateItemQuantity(product.id, product.quantity - 1)
 
                                                 }>-</button>
-                                            <button onClick={() => updateItemQuantity(product.id, product.quantity + 1)
 
-                                            }>+</button>
-                                            <button onClick={()=>removeItem(product.id)}>Remove Item</button>
+
                                         </td>
+
+                                        <td><button className='plussBtn' onClick={() => updateItemQuantity(product.id, product.quantity + 1)
+
+                                        }>+</button></td>
+
+                                        <td> <button className='removeBtn' onClick={() => removeItem(product.id)}>Remove Item</button></td>
                                     </tr>
                                 )
 
@@ -52,13 +69,15 @@ export const Cart = () => {
                     </table>
                 </div>
 
-                <div>
-                    <h2>Total Price : $ {cartTotal}</h2>
-                </div>
+                <div className='bottom-cart'>
+                    <div>
+                        <h2>Total Price : $ {cartTotal}</h2>
+                    </div>
 
-                <div>
-                    <button onClick={()=>emptyCart()}>Clear Cart</button>
-                    <button>Buy Now</button>
+                    <div>
+                        <button className='clearBtn' onClick={() => emptyCart()}>Clear Cart</button>
+                        <button className='buyBtn'>Buy Now</button>
+                    </div>
                 </div>
             </div>
         </section>
