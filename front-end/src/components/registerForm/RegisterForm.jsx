@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "../css/styles.css"
 import { LoginForm } from '../loginForm/LoginForm'
-
+import axios from "axios";
 
 export const Register = (props) => {
     const [email, setEmail] = useState("");
@@ -13,6 +13,16 @@ export const Register = (props) => {
         console.log("Name     : " + name);
         console.log("email    : " + email);
         console.log("Password : " + password);
+    }
+
+    const registerCustomer = ()=>{
+        axios.post("http://localhost:8000/customer/exist",{"cusEmail":email})
+        .then(response =>{
+            console.log(response.data.message)
+        }).
+        catch(error =>{
+            console.log(error)
+        });
     }
 
 
@@ -31,7 +41,7 @@ export const Register = (props) => {
                     <label htmlFor="password">Password</label>
                     <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="password" id="password" name="password" />
 
-                    <button type="submit">Log In</button>
+                    <button type="submit" onClick={registerCustomer}>Log In</button>
                 </form>
 
                 <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Already have and account? Login here</button>

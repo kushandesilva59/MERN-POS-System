@@ -16,7 +16,7 @@ const customerRoute = require('./routes/CustomerRoute');
 const itemRoute = require('./routes/ItemRoute');
 const orderRoute = require('./routes/OrderRoutes')
 
-app.use(customerRoute);
+app.use('/customer',customerRoute);
 app.use(orderRoute);
 app.use(itemRoute);
 

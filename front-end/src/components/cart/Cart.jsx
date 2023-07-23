@@ -21,6 +21,8 @@ export const Cart = () => {
     return (
         <section className='cart'>
             <div>
+                <h2 className='title'>Cart</h2>
+
                 <div className='top-cart'>
                     {/* <h5>Cart {totalUniqueItems} total Items : {totalItems}</h5> */}
                     <table >
@@ -39,9 +41,9 @@ export const Cart = () => {
                         <tbody>
                             {items.map((product, index) => {
                                 return (
-                                    <tr key={index}>
+                                    <tr key={index} style={{"Border-bottom":"4px solid black"}}>
                                         <td>
-                                            <img src={product.img} alt="" style={{ height: '6rem',width:'auto'}} />
+                                            <img src={product.img} alt="" style={{ height: '6rem', width: 'auto' }} />
                                         </td>
                                         <td>{product.title}</td>
                                         <td>$ {product.price}</td>

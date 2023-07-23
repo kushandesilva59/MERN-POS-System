@@ -9,6 +9,10 @@ import { Products } from './components/products/Products';
 import { Cart } from './components/cart/Cart';
 import { Header2 } from './components/header/Header2';
 import { Form } from './components/form/Form';
+import { Customers } from './components/customers/Customers';
+import { Footer2 } from './components/footer/Footer2';
+import { Copyright } from './components/copyright/Copyright';
+import { About2 } from './components/about/About2';
 
 
 const router = createBrowserRouter([
@@ -29,6 +33,10 @@ const router = createBrowserRouter([
       < CartProvider>
         <Products />
         <Cart />
+        <About2/>
+        <Customers />
+        <Footer2 />
+        <Copyright />
       </CartProvider>
     </>
 
@@ -36,7 +44,7 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <div>
-     <Form/>
+      <Form />
     </div>,
   },
 ]);
