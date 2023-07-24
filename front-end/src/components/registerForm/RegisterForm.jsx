@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "../css/styles.css"
 import { LoginForm } from '../loginForm/LoginForm'
 import axios from "axios";
+import {Products} from '../products/Products'
 
 export const Register = (props) => {
     const [email, setEmail] = useState("");
@@ -18,7 +19,14 @@ export const Register = (props) => {
     const registerCustomer = ()=>{
         axios.post("http://localhost:8000/customer/exist",{"cusEmail":email})
         .then(response =>{
-            console.log(response.data.message)
+            console.log("Front end :",response.data.message);
+
+            if(response.data.message === 'Registration succesfull'){
+                console.log("inside if")
+                // <Products/>
+            }else{
+                //error alert
+            }
         }).
         catch(error =>{
             console.log(error)

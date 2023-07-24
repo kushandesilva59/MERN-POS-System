@@ -72,17 +72,12 @@ router.post('/login', async (req, res) => {
          //check received email address is exist
          const customer = await Customer.findOne({cusEmail});
 
-         console.log("Back end  befor => ",cusEmail)
-       
-   
             if(customer){
-                  res.status(400).json({message:"Email is exists"});
+                  res.status(400).json({message:"Registration failed. Email is already exists"});
             }else{
                res.status(200).json({message:"Registration succesfull"});
             }
          
-
-         console.log("Back end after => ",email)
 
       }catch(error){
          res.status(500).json({ message: 'An error occurred' ,error});
