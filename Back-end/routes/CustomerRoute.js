@@ -84,7 +84,30 @@ router.post('/login', async (req, res) => {
          console.error(error)
       }
  });
+
+ //get last Customer
+router.get("/lastCustomer", async (req, res) => {
+   try {
+      const customer = await Customer.find().sort({cusId:-1}).limit(1);
+      res.send(customer);
+      console.log("Send Customer..");
+   } catch (error) {
+      return error;
+   }
+});
  
+
+//get last cus id
+router.get("/lastCustomerId", async (req, res) => {
+   try {
+      const customer = await Customer.find().sort({cusId:-1}).limit(1);
+      const cusId = customer.cusId;
+      res.send(cusId);
+      console.log("Send Customer id..");
+   } catch (error) {
+      return error;
+   }
+});
  
  
  

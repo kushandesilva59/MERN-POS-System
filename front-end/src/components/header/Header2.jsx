@@ -21,7 +21,7 @@ export const Header2 = () => {
             <ul className="navbar">
                 <li><a href="/">Home</a></li>
                 <li><a href="#about">About Us</a></li>
-                <li><a href="products">Products</a></li>
+                {/* <li><a href="products">Products</a></li> */}
                 <li><a href="#customers">Customers</a></li>
             </ul>
 

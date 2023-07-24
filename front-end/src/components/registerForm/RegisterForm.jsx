@@ -3,18 +3,22 @@ import styles from "../css/styles.css"
 import { LoginForm } from '../loginForm/LoginForm'
 import axios from "axios";
 import {Products} from '../products/Products'
+import { useNavigate} from 'react-router-dom'
 
 export const Register = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [name, setName] = useState("");
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Name     : " + name);
         console.log("email    : " + email);
         console.log("Password : " + password);
+        
     }
+    
 
     const registerCustomer = ()=>{
         axios.post("http://localhost:8000/customer/exist",{"cusEmail":email})
@@ -24,6 +28,18 @@ export const Register = (props) => {
             if(response.data.message === 'Registration succesfull'){
                 console.log("inside if")
                 // <Products/>
+
+                axios.get("http://localhost:8000/customer/lastCustomer")
+                .then(response =>{
+                    console.log(response.data[0].cusId);
+                })
+              
+
+
+                navigate('/products')
+                
+
+                
             }else{
                 //error alert
             }
