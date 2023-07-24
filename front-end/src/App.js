@@ -9,6 +9,7 @@ import { Copyright } from './components/copyright/Copyright';
 import { CartProvider } from 'react-use-cart';
 import { Cart } from './components/cart/Cart';
 import Axios from 'axios';
+import { Payment } from './components/payment/Payment';
 
 function App() {
   return (
@@ -18,12 +19,14 @@ function App() {
       <Cart/>
      </CartProvider> */}
 
-     <Header2/>
+     {/* <Header2/>
      <Home/>
      <About2/>
      <Customers/>
      <Footer2/>
-     <Copyright/>
+     <Copyright/> */}
+
+     <Payment/>
     </div>
   );
 }
