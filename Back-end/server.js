@@ -17,7 +17,7 @@ const itemRoute = require('./routes/ItemRoute');
 const orderRoute = require('./routes/OrderRoutes')
 
 app.use('/customer',customerRoute);
-app.use(orderRoute);
+app.use('/order',orderRoute);
 app.use(itemRoute);
 
 const PORT = 8000;

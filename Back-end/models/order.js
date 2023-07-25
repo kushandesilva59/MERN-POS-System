@@ -17,8 +17,14 @@ const orderSchema = new mongoose.Schema({
         type : String,
         required : true
     },
-    details : {
-       
+    details: {
+        type: [
+            {
+                itemName: String,
+                quantity: Number,
+                price: Number
+            }
+        ]
     }
 
 });
