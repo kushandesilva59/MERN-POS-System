@@ -4,7 +4,7 @@ const Customer = require('../models/customer');
 const customer = require('../models/customer');
 
 
-// save
+// save customer --- admin
 router.post('/save', async (req, res) => {
    try {
       console.log("Request customer  :", req.body);

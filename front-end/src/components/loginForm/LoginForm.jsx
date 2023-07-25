@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import styles from "../css/styles.css"
 import { Copyright } from "../copyright/Copyright";
 import axios from "axios";
+import { useNavigate} from 'react-router-dom'
+
 
 export const Login = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -30,8 +33,14 @@ export const Login = (props) => {
                 if (response.data.message === 'Login successful') {
                     console.log('inside if')
                     //Alert confirmation
+
+                    alert("Log in success!")
+
+                    navigate('/products');
+
+                    
                 } else {
-                    //Alert confirmation
+                    //Alert wrong details
                 }
             })
             .catch(error => {

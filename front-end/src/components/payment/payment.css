@@ -15,7 +15,7 @@
   align-items: center;
   padding:25px;
   min-height: 90vh;
-  background: linear-gradient(90deg, #2ecc71 60%, #27ae60 40.1%);
+  background: linear-gradient(79deg, #1b1b1b, #bc9667 48%, #edeae3);
 }
 
 .payment-container form{
@@ -76,19 +76,20 @@
 .payment-container form .row .col .inputBox img{
   height: 34px;
   margin-top: 5px;
-  filter: drop-shadow(0 0 1px #000);
+  filter: drop-shadow(0 0 1px #1b1b1b);
 }
 
 .payment-container form .submit-btn{
   width: 100%;
   padding:12px;
   font-size: 17px;
-  background: #27ae60;
+  background: #1b1b1b;
   color:#fff;
   margin-top: 5px;
   cursor: pointer;
 }
 
 .payment-container form .submit-btn:hover{
-  background: #2ecc71;
+  background: #bc9667;
+  color: #FBFEEB;
 }

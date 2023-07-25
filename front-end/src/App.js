@@ -19,14 +19,14 @@ function App() {
       <Cart/>
      </CartProvider> */}
 
-     {/* <Header2/>
+     <Header2/>
      <Home/>
      <About2/>
      <Customers/>
      <Footer2/>
-     <Copyright/> */}
+     <Copyright/>
 
-     <Payment/>
+     {/* <Payment/> */}
     </div>
   );
 }

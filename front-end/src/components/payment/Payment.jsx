@@ -70,10 +70,10 @@ export const Payment = () => {
                         <span>exp year :</span>
                         <input type="number" placeholder="2022"/>
                     </div>
-                    <div class="inputBox">
+                    {/* <div class="inputBox">
                         <span>CVV :</span>
                         <input type="text" placeholder="1234"/>
-                    </div>
+                    </div> */}
                 </div>
 
             </div>
