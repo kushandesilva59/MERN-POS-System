@@ -30,15 +30,29 @@ router.get("/orders", async (req, res) => {
    }
 });
 
-router.post('/lastOrder', async (req, res) => {
+router.get('/lastOrder', async (req, res) => {
+console.log("inside last ordert get method")
+
    try {
       const order = await Order.find().sort({ orderId: -1 }).limit(1);
       res.send(order);
-      console.log("Send order..");
+      console.log(`Send order ..  id ${order.orderId}`);
 
    } catch (error) {
       console.log(error)
    }
-})
+});
+
+//get last cus id
+router.get("/lastOrderId", async (req, res) => {
+   try {
+      const order = await Order.find().sort({orderId:-1}).limit(1);
+      const orderId = order.orderId;
+      res.send(orderId);
+      console.log("Send order id..");
+   } catch (error) {
+      return error;
+   }
+});
 
 module.exports = router;

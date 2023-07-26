@@ -8,6 +8,8 @@ import { Payment } from '../payment/Payment';
 
 export const Cart = () => {
 
+
+
     const navigate = useNavigate();
 
     const {
@@ -29,8 +31,6 @@ export const Cart = () => {
 
         const details = [];
 
-
-
         for (const item of items) {
             console.log(item.id)
 
@@ -43,16 +43,23 @@ export const Cart = () => {
             details.push(detail);
         }
 
-         // Example of creating a new order with details as an array of objects
+        axios.get('http://localhost:8000/order/lastOrder')
+        .then(response =>{
+            let orderId = response.data[0].orderId;
+            const newOrderId = ++orderId;
+            console.log(`new order id ${newOrderId}`)
+
+            // Example of creating a new order with details as an array of objects
          const order = {
-            orderId: '1',
+            orderId: newOrderId,
             customerId: '2',
             date: '2023-07-25',
             amount: cartTotal,
             details: details
         }
+            
 
-        axios.post("http://localhost:8000/order/saveOrder", order)
+            axios.post("http://localhost:8000/order/saveOrder", order)
             .then(response => {
                 console.log("saved order");
                 emptyCart();
@@ -60,6 +67,18 @@ export const Cart = () => {
             }).catch(error => {
                 console.log(error)
             });
+            
+
+            // console.log(response.data[0].orderId)
+        }).catch(error =>{
+            console.log("Error ",error)
+        })
+
+         
+
+
+
+       
 
             
 
