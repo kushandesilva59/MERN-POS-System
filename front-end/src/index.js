@@ -13,12 +13,15 @@ import { Customers } from './components/customers/Customers';
 import { Footer2 } from './components/footer/Footer2';
 import { Copyright } from './components/copyright/Copyright';
 import { About2 } from './components/about/About2';
+import { Payment } from './components/payment/Payment';
+import { Header } from './components/header/Header';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <div>
+      <Header2/>
       <App />
     </div>,
   },
@@ -29,7 +32,7 @@ const router = createBrowserRouter([
   {
     path: "/products",
     element: <>
-      <Header2 />
+      <Header />
       < CartProvider>
         <Products />
         <Cart />
@@ -40,6 +43,10 @@ const router = createBrowserRouter([
       </CartProvider>
     </>
 
+  },
+  {
+    path: "/payment",
+    element: <div><Payment/></div>,
   },
   {
     path: "/login",

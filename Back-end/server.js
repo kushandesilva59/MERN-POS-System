@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 const customerRoute = require('./routes/CustomerRoute');
 const itemRoute = require('./routes/ItemRoute');
 const orderRoute = require('./routes/OrderRoutes')
+const tempRoute = require('./routes/TempRoute')
 
 app.use('/customer',customerRoute);
 app.use('/order',orderRoute);

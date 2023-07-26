@@ -3,6 +3,7 @@ import styles from "../css/styles.css"
 import { Copyright } from "../copyright/Copyright";
 import axios from "axios";
 import { useNavigate} from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 
 export const Login = (props) => {
@@ -31,21 +32,38 @@ export const Login = (props) => {
 
 
                 if (response.data.message === 'Login successful') {
+                    
+                    
+
                     console.log('inside if')
-                    //Alert confirmation
-
-                    alert("Log in success!")
-
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Login Succesfull !',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
                     navigate('/products');
 
                     
                 } else {
                     //Alert wrong details
+
+                   
                 }
             })
             .catch(error => {
                 // Handle errors, if any
-                console.error(error);
+
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: 'Login Failed !',
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+
+                console.error("This is error   ",error);
 
             });
     }

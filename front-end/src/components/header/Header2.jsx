@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from '../header/header2.css'
 import logo from '../../images/logo.png'
 import { AiOutlineSearch } from 'react-icons/ai'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
-import js from '../header/header.js'
+import {AiOutlineLogin} from 'react-icons/ai'
+
 
 
 export const Header2 = () => {
 
+
+
+    
+
     return (
+
+        
 
         <div className='header'>
             <a href="#" className='logo'>
@@ -26,7 +33,9 @@ export const Header2 = () => {
             </ul>
 
             <div className="header-icon">
-                <a href="login"><AiOutlineShoppingCart className='bx bx-cart-alt' /></a>
+               
+               <a href="login"><AiOutlineLogin className='bx bx-cart-alt' /></a>
+               
 
                 {/* <i href="login"></i> */}
                 <i id='search-icon'><AiOutlineSearch className='bx bx-search' /></i>

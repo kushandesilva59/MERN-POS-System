@@ -11,7 +11,10 @@ import { Cart } from './components/cart/Cart';
 import Axios from 'axios';
 import { Payment } from './components/payment/Payment';
 
+
 function App() {
+  
+
   return (
     <div className="App">
     {/* < CartProvider>
@@ -19,7 +22,7 @@ function App() {
       <Cart/>
      </CartProvider> */}
 
-     <Header2/>
+     {/* <Header2/> */}
      <Home/>
      <About2/>
      <Customers/>

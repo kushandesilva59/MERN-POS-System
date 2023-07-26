@@ -3,8 +3,12 @@ import { useCart } from 'react-use-cart'
 import { Products } from '../products/Products';
 import styles from '../cart/cart.css'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { Payment } from '../payment/Payment';
 
 export const Cart = () => {
+
+    const navigate = useNavigate();
 
     const {
         isEmpty,
@@ -39,27 +43,29 @@ export const Cart = () => {
             details.push(detail);
         }
 
-
-        // Example of creating a new order with details as an array of objects
-        const order = {
-            "orderId": '1',
-            "customerId": '2',
-            "date": '2023-07-25',
-            "amount": cartTotal,
-            "details": details
+         // Example of creating a new order with details as an array of objects
+         const order = {
+            orderId: '1',
+            customerId: '2',
+            date: '2023-07-25',
+            amount: cartTotal,
+            details: details
         }
-
-        // console.log(items)
 
         axios.post("http://localhost:8000/order/saveOrder", order)
             .then(response => {
-                console.log(response.data)
+                console.log("saved order");
+                emptyCart();
+                
             }).catch(error => {
-                console.log(error.message)
+                console.log(error)
             });
+
+            
 
 
     }
+
 
     return (
         <section className='cart'>
