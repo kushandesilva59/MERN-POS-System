@@ -5,8 +5,12 @@ import styles from '../cart/cart.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Payment } from '../payment/Payment';
+import Swal from 'sweetalert2';
+
 
 export const Cart = () => {
+
+    const [order, setOrder] = "";
 
 
 
@@ -29,58 +33,70 @@ export const Cart = () => {
 
     const saveOrder = () => {
 
-        const details = [];
+        Swal.fire({
+            title: `Do you want to confirm order ?`,
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Yes',
+            denyButtonText: `Oops! No`,
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                Swal.fire('Order success!', '', 'success')
+                const details = [];
 
-        for (const item of items) {
-            console.log(item.id)
+                for (const item of items) {
+                    console.log(item.id)
 
-            const detail = {
-                "itemName": item.title,
-                "quantity": item.quantity,
-                "price": item.itemTotal
+                    const detail = {
+                        "itemName": item.title,
+                        "quantity": item.quantity,
+                        "price": item.itemTotal
+                    }
+
+                    details.push(detail);
+                }
+
+                axios.get('http://localhost:8000/order/lastOrder')
+                    .then(response => {
+                        let orderId = response.data[0].orderId;
+                        const newOrderId = ++orderId;
+                        console.log(`new order id ${newOrderId}`)
+
+                        // Example of creating a new order with details as an array of objects
+                        const order = {
+                            orderId: newOrderId,
+                            customerId: '2',
+                            date: '2023-07-25',
+                            amount: cartTotal,
+                            details: details
+                        }
+
+
+
+
+                        axios.post("http://localhost:8000/order/saveOrder", order)
+                            .then(response => {
+                                console.log("saved order");
+                                emptyCart();
+
+                            }).catch(error => {
+                                console.log(error)
+                            });
+
+
+                        // console.log(response.data[0].orderId)
+                    }).catch(error => {
+                        console.log("Error ", error)
+                    });
+
+            } else if (result.isDenied) {
+                Swal.fire('Order Unsuccess!', '', 'info')
             }
-
-            details.push(detail);
-        }
-
-        axios.get('http://localhost:8000/order/lastOrder')
-        .then(response =>{
-            let orderId = response.data[0].orderId;
-            const newOrderId = ++orderId;
-            console.log(`new order id ${newOrderId}`)
-
-            // Example of creating a new order with details as an array of objects
-         const order = {
-            orderId: newOrderId,
-            customerId: '2',
-            date: '2023-07-25',
-            amount: cartTotal,
-            details: details
-        }
-            
-
-            axios.post("http://localhost:8000/order/saveOrder", order)
-            .then(response => {
-                console.log("saved order");
-                emptyCart();
-                
-            }).catch(error => {
-                console.log(error)
-            });
-            
-
-            // console.log(response.data[0].orderId)
-        }).catch(error =>{
-            console.log("Error ",error)
         })
 
-         
 
 
-
-       
-
-            
 
 
     }
@@ -108,7 +124,11 @@ export const Cart = () => {
 
                         <tbody>
                             {items.map((product, index) => {
+
+
                                 return (
+
+
                                     <tr key={index} style={{ "Border-bottom": "4px solid black" }}>
                                         <td>
                                             <img src={product.img} alt="" style={{ height: '6rem', width: 'auto' }} />

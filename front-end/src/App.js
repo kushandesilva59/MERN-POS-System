@@ -23,6 +23,7 @@ function App() {
      </CartProvider> */}
 
      {/* <Header2/> */}
+     
      <Home/>
      <About2/>
      <Customers/>

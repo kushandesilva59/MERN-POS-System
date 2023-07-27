@@ -3,7 +3,7 @@ import pic1 from '../../images/card_img.png'
 import styles from '../payment/payment.css'
 import axios from 'axios'
 
-export const Payment = ({order}) => {
+export const Payment = (props) => {
 
     const getData = (order)=>{
         console.log(order);

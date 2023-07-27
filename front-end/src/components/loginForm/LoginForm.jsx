@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "../css/styles.css"
 import { Copyright } from "../copyright/Copyright";
 import axios from "axios";
-import { useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 
@@ -15,6 +15,7 @@ export const Login = (props) => {
         e.preventDefault();
         console.log("Email     : " + email);
         console.log("Password  : " + password);
+
 
     }
 
@@ -32,9 +33,6 @@ export const Login = (props) => {
 
 
                 if (response.data.message === 'Login successful') {
-                    
-                    
-
                     console.log('inside if')
                     Swal.fire({
                         position: 'center',
@@ -42,14 +40,12 @@ export const Login = (props) => {
                         title: 'Login Succesfull !',
                         showConfirmButton: false,
                         timer: 1500
-                      })
+                    })
                     navigate('/products');
-
-                    
                 } else {
                     //Alert wrong details
 
-                   
+
                 }
             })
             .catch(error => {
@@ -61,9 +57,9 @@ export const Login = (props) => {
                     title: 'Login Failed !',
                     showConfirmButton: false,
                     timer: 1500
-                  })
+                })
 
-                console.error("This is error   ",error);
+                console.error("This is error   ", error);
 
             });
     }
