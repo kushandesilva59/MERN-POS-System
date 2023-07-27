@@ -11,17 +11,26 @@ export const Login = (props) => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Email     : " + email);
         console.log("Password  : " + password);
 
-
     }
 
     const logAsAdmin = () => {
-        axios.get()
+        Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Still developing !',
+            showConfirmButton: false,
+            timer: 1500
+        })
     }
+
+   
 
     const logAsCustomer = () => {
         // Make a POST request using Axios
@@ -41,6 +50,7 @@ export const Login = (props) => {
                         showConfirmButton: false,
                         timer: 1500
                     })
+                    
                     navigate('/products');
                 } else {
                     //Alert wrong details

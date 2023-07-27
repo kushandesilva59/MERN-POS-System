@@ -17,7 +17,12 @@ import { Payment } from './components/payment/Payment';
 import { Header } from './components/header/Header';
 
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  
+  
+  
+  
+  [
   {
     path: "/",
     element: <div>

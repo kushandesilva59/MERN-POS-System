@@ -9,7 +9,9 @@ import {AiOutlineLogin} from 'react-icons/ai'
 
 export const Header2 = () => {
 
-
+    const goTop = () => {
+        window.scrollTo({top:0,left:0,behavior:'smooth'})
+    }
 
     
 
@@ -18,9 +20,13 @@ export const Header2 = () => {
         
 
         <div className='header'>
-            <a href="#" className='logo'>
-                <img src={logo} alt="logo" />
-            </a>
+            {/* <a href="" className='logo'>
+                <img src={logo} alt="logo" onClick={goTop}/>
+            </a> */}
+
+            <div className="logo">
+                <img src={logo} alt="" onClick={goTop}/>
+            </div>
 
 
             <i className='bx bx-menu' id='menu-icon'></i>

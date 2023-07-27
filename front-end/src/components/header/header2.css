@@ -22,6 +22,10 @@ header.shadow{
     box-shadow: 2px 2px 10px 4px rgb(14 55 54 / 15%);
 }
 
+.logo{
+    cursor: pointer;
+}
+
 .logo img{
     width: 60px;
 

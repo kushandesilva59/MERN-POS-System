@@ -6,14 +6,11 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Payment } from '../payment/Payment';
 import Swal from 'sweetalert2';
-
+import { Login } from '../loginForm/LoginForm';
 
 export const Cart = () => {
 
     const [order, setOrder] = "";
-
-
-
     const navigate = useNavigate();
 
     const {
@@ -26,8 +23,6 @@ export const Cart = () => {
         removeItem,
         emptyCart
     } = useCart();
-
-
 
     if (isEmpty) return <h1></h1>
 
@@ -63,7 +58,6 @@ export const Cart = () => {
                         const newOrderId = ++orderId;
                         console.log(`new order id ${newOrderId}`)
 
-                        // Example of creating a new order with details as an array of objects
                         const order = {
                             orderId: newOrderId,
                             customerId: '2',
@@ -71,9 +65,6 @@ export const Cart = () => {
                             amount: cartTotal,
                             details: details
                         }
-
-
-
 
                         axios.post("http://localhost:8000/order/saveOrder", order)
                             .then(response => {
@@ -83,22 +74,13 @@ export const Cart = () => {
                             }).catch(error => {
                                 console.log(error)
                             });
-
-
-                        // console.log(response.data[0].orderId)
                     }).catch(error => {
                         console.log("Error ", error)
                     });
-
             } else if (result.isDenied) {
                 Swal.fire('Order Unsuccess!', '', 'info')
             }
-        })
-
-
-
-
-
+        });
     }
 
 
