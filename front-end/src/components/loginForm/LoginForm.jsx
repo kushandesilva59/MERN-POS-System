@@ -27,7 +27,9 @@ export const Login = (props) => {
             title: 'Still developing !',
             showConfirmButton: false,
             timer: 1500
-        })
+        });
+
+        navigate('/admin')
     }
 
    

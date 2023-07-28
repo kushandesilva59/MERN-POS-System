@@ -15,6 +15,7 @@ import { Copyright } from './components/copyright/Copyright';
 import { About2 } from './components/about/About2';
 import { Payment } from './components/payment/Payment';
 import { Header } from './components/header/Header';
+import { Sider } from './components/admin/sider/Sider';
 
 
 const router = createBrowserRouter(
@@ -28,6 +29,12 @@ const router = createBrowserRouter(
     element: <div>
       <Header2/>
       <App />
+    </div>,
+  },
+  {
+    path: "/admin",
+    element: <div>
+      <Sider/>
     </div>,
   },
   {
