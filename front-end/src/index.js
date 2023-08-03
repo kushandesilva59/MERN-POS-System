@@ -16,6 +16,7 @@ import { About2 } from './components/about/About2';
 import { Payment } from './components/payment/Payment';
 import { Header } from './components/header/Header';
 import { Sider } from './components/admin/sider/Sider';
+import { HeaderAdmin } from './components/admin/header/HeaderAdmin';
 
 
 const router = createBrowserRouter(
@@ -35,6 +36,7 @@ const router = createBrowserRouter(
     path: "/admin",
     element: <div>
       <Sider/>
+      <HeaderAdmin/>
     </div>,
   },
   {

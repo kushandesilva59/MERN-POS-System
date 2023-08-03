@@ -9,6 +9,7 @@ router.post('/save', async (req, res) => {
    try {
       console.log("Request customer  :", req.body);
       const newCustomer = await Customer.create(req.body);
+      localStorage.setItem("cusId",newCustomer.cusId)
       res.send("Customer saved succesfully");
    } catch (error) {
       return error;
@@ -52,7 +53,8 @@ router.post('/login', async (req, res) => {
      // Check if the customer exists
      if (customer) {
        // Customer exists, login is successful
-       res.status(200).json({ message: 'Login successful' });
+       res.status(200).json({ message: 'Login successful' , data:customer});
+       
      } else {
        // Customer does not exist or invalid credentials
        res.status(401).json({ message: 'Invalid credentials' });

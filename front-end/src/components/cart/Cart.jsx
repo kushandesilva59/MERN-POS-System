@@ -60,7 +60,7 @@ export const Cart = () => {
 
                         const order = {
                             orderId: newOrderId,
-                            customerId: '2',
+                            customerId: localStorage.getItem("customerId"),
                             date: '2023-07-25',
                             amount: cartTotal,
                             details: details

@@ -40,6 +40,8 @@ export const Login = (props) => {
             .then(response => {
                 // Handle the response from the server
                 console.log(response.data.message);
+                console.log("Data   :",response.data.data)
+                localStorage.setItem("customerId",response.data.data.cusId)
 
 
 
@@ -66,7 +68,7 @@ export const Login = (props) => {
                 Swal.fire({
                     position: 'center',
                     icon: 'error',
-                    title: 'Login Failed !',
+                    title: `Login Failed !`,
                     showConfirmButton: false,
                     timer: 1500
                 })
